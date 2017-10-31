@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d6c2164f7f4a76a8e8f9caafb28b27b",
+    "content-hash": "107433e0f9de5002a506f4f9a7f42c76",
     "packages": [
         {
             "name": "a2lix/translation-form-bundle",
@@ -1421,6 +1421,53 @@
             "time": "2017-02-03T22:48:59+00:00"
         },
         {
+            "name": "excelwebzone/recaptcha-bundle",
+            "version": "v1.4.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/excelwebzone/EWZRecaptchaBundle.git",
+                "reference": "bff309088ce9bbe7cb8f154e2bb9376f0c7b41fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/excelwebzone/EWZRecaptchaBundle/zipball/bff309088ce9bbe7cb8f154e2bb9376f0c7b41fd",
+                "reference": "bff309088ce9bbe7cb8f154e2bb9376f0c7b41fd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6",
+                "symfony/form": "^2.8 || ^3.0",
+                "symfony/framework-bundle": "^2.8 || ^3.0",
+                "symfony/validator": "^2.8 || ^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "EWZ\\Bundle\\RecaptchaBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael H. Arieli",
+                    "email": "excelwebzone@gmail.com",
+                    "homepage": "http://excelwebzone.com/"
+                }
+            ],
+            "description": "This bundle provides easy reCAPTCHA form field integration",
+            "homepage": "https://github.com/excelwebzone/EWZRecaptchaBundle",
+            "keywords": [
+                "recaptcha"
+            ],
+            "time": "2017-05-28T00:57:14+00:00"
+        },
+        {
             "name": "friendsofsymfony/user-bundle",
             "version": "v1.3.7",
             "target-dir": "FOS/UserBundle",
@@ -2540,16 +2587,16 @@
         },
         {
             "name": "nelmio/alice",
-            "version": "v2.3.3",
+            "version": "v2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nelmio/alice.git",
-                "reference": "c5a129a7b38868bf6ce94ff6235e0b4d236ec3ad"
+                "reference": "41fc89e2dfbb9d6d13a0f350393e5a91e9064d69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nelmio/alice/zipball/c5a129a7b38868bf6ce94ff6235e0b4d236ec3ad",
-                "reference": "c5a129a7b38868bf6ce94ff6235e0b4d236ec3ad",
+                "url": "https://api.github.com/repos/nelmio/alice/zipball/41fc89e2dfbb9d6d13a0f350393e5a91e9064d69",
+                "reference": "41fc89e2dfbb9d6d13a0f350393e5a91e9064d69",
                 "shasum": ""
             },
             "require": {
@@ -2595,7 +2642,7 @@
                 "orm",
                 "test"
             ],
-            "time": "2017-10-20T19:10:24+00:00"
+            "time": "2017-10-31T11:42:39+00:00"
         },
         {
             "name": "ocramius/package-versions",

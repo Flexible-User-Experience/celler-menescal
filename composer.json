@@ -21,6 +21,7 @@
         "doctrine/orm": "^2.4.8",
         "egeloen/ckeditor-bundle": "^2.0",
         "egulias/email-validator": "^1.2",
+        "excelwebzone/recaptcha-bundle": "^1.4",
         "hautelook/alice-bundle": "^1.0",
         "incenteev/composer-parameter-handler": "~2.0",
         "ircmaxell/password-compat": "~1.0",

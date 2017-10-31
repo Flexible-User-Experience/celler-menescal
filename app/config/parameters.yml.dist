@@ -39,4 +39,7 @@ parameters:
     google_analytics_account: "UA-xxxxxxxx-x"
     google_maps_api_key:      "<YOUR-GMAP-API-KEY>"
 
+    recaptcha_site_key: "xxxxxxxxxxxxx"
+    recaptcha_secret:   "xxxxxxxxxxxxx"
+
     dev_delivery_address: "your@email.com"
