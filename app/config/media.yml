@@ -1,0 +1,73 @@
+# Liip Imagine
+liip_imagine:
+    driver: gd
+    loaders:
+       default:
+          filesystem:
+            locator: filesystem_insecure
+    resolvers:
+       default:
+          web_path: ~
+    filter_sets:
+        cache: ~
+        imatge50x50:
+            quality: 70
+            filters:
+                thumbnail: { size: [50, null], mode: outbound }
+        imatge100x60:
+            quality: 90
+            filters:
+                thumbnail: { size: [100, 60], mode: outbound }
+        imatge100x220:
+            quality: 90
+            filters:
+                thumbnail: { size: [100, 220], mode: outbound }
+        imatge140x307:
+            quality: 90
+            filters:
+                thumbnail: { size: [140, 307], mode: outbound }
+        imatge140x420:
+            quality: 90
+            filters:
+                thumbnail: { size: [140, 420], mode: outbound }
+        imatge167x500:
+            quality: 90
+            filters:
+                thumbnail: { size: [167, 500], mode: outbound }
+        imatge500x220:
+            quality: 90
+            filters:
+                thumbnail: { size: [500, 220], mode: outbound }
+        imatge620x220:
+            quality: 90
+            filters:
+                thumbnail: { size: [620, 220], mode: outbound }
+        imatge280xY:
+            quality: 90
+            filters:
+                thumbnail: { size: [280, null], mode: outbound }
+
+# Vich Uploader
+vich_uploader:
+    db_driver: orm
+    mappings:
+        imatge:
+            namer:              vich_uploader.namer_uniqid
+            uri_prefix:         /uploads/images
+            upload_destination: "%kernel.root_dir%/../web/uploads/images"
+        inici:
+            namer:              vich_uploader.namer_uniqid
+            uri_prefix:         /uploads/images/inici
+            upload_destination: "%kernel.root_dir%/../web/uploads/images/inici"
+        categories:
+            namer:              vich_uploader.namer_uniqid
+            uri_prefix:         /uploads/images/categories
+            upload_destination: "%kernel.root_dir%/../web/uploads/images/categories"
+        vins:
+            namer:              vich_uploader.namer_uniqid
+            uri_prefix:         /uploads/images/vins
+            upload_destination: "%kernel.root_dir%/../web/uploads/images/vins"
+        activitats:
+            namer:              vich_uploader.namer_uniqid
+            uri_prefix:         /uploads/images/activitats
+            upload_destination: "%kernel.root_dir%/../web/uploads/images/activitats"

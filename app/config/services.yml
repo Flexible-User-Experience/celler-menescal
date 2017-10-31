@@ -1,0 +1,49 @@
+services:
+# Sonata
+    flux.admin.page:
+        class: Flux\PageBundle\Admin\PageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Pàgines, label: Pagina }
+        arguments: [ ~, Flux\PageBundle\Entity\Page, ~ ]
+    flux.admin.productcategory:
+        class: Flux\ProductBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Vins, label: Categoria }
+        arguments: [ ~, Flux\ProductBundle\Entity\Category, ~ ]
+    flux.admin.product:
+        class: Flux\ProductBundle\Admin\ProductAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Vins, label: Vi }
+        arguments: [ ~, Flux\ProductBundle\Entity\Product, ~ ]
+    flux.admin.activitycategory:
+        class: Flux\ProductBundle\Admin\ActivityCategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Activitats, label: Categoria }
+        arguments: [ ~, Flux\ProductBundle\Entity\ActivityCategory, ~ ]
+    flux.admin.activity:
+        class: Flux\ProductBundle\Admin\ActivityAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Activitats, label: Activitat }
+        arguments: [ ~, Flux\ProductBundle\Entity\Activity, ~ ]
+# Menu
+    app.frontend_menu_builder:
+        class: CalMenescal\MainBundle\Menu\Builder
+        arguments: [ "@knp_menu.factory", "@security.authorization_checker", "@security.token_storage", "@doctrine.orm.entity_manager" ]
+    app.frontend_top_menu_ca:
+        class: Knp\Menu\MenuItem
+        factory: [ "@app.frontend_menu_builder", main_ca_Menu ]
+        arguments: [ "@request_stack" ]
+        tags:
+            - { name: knp_menu.menu, alias: catop }
+    app.frontend_top_menu_es:
+        class: Knp\Menu\MenuItem
+        factory: [ "@app.frontend_menu_builder", main_es_Menu ]
+        arguments: [ "@request_stack" ]
+        tags:
+            - { name: knp_menu.menu, alias: estop }
+    app.frontend_top_menu_en:
+        class: Knp\Menu\MenuItem
+        factory: [ "@app.frontend_menu_builder", main_en_Menu ]
+        arguments: [ "@request_stack" ]
+        tags:
+            - { name: knp_menu.menu, alias: entop }

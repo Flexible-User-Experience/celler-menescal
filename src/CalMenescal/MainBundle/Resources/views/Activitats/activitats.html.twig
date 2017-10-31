@@ -1,0 +1,33 @@
+{% extends "MainBundle:Global:layout.html.twig" %}
+
+{% block titulo %}
+    {% trans %}titulo.actividades{% endtrans %} |
+{% endblock %}
+
+{% block description %}
+    {% trans %}description.actividades{% endtrans %}
+{% endblock %}
+
+{% block recursos %}{% endblock recursos %}
+
+{% block principal %}
+    <div class="constrictor clearfix">
+        {% for pagina in pagines %}
+            <a href="{{ path('activitats_detail_' ~ app.request.locale, {title: pagina.titleSlug}) }}">
+                <div class="panel-segundo-nivel {% if (loop.index % 3 - 1) == 0 %}primero{% endif %}">
+                    <img src="{{ vich_uploader_asset(pagina, 'image1File') | imagine_filter('imatge100x220') }}" alt="{{ pagina.altImage1 }}" title="{{ pagina.titleImage1 }}">
+                    <div class="base-interior">
+                        <h1>{{ pagina.title }}</h1>
+                        <p>{{ pagina.summary }}</p>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block peuidiomes %}
+    {% if app.request.locale != 'ca' %}<a href="{{ path('activitats_ca', {_locale: 'ca'}) }}">català</a> ·{% endif %}
+    {% if app.request.locale != 'es' %}<a href="{{ path('activitats_es', {_locale: 'es'}) }}">español</a> {% if app.request.locale != 'en' %}·{% endif %}{% endif %}
+    {% if app.request.locale != 'en' %}<a href="{{ path('activitats_en', {_locale: 'en'}) }}">english</a>{% endif %}<br/>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "MainBundle:Global:layout.html.twig" %}
+
+{% block titulo %}
+    {% if paginaSeleccionada.metaTitle | length > 0 %}
+        {{ paginaSeleccionada.metaTitle }}
+    {% else %}
+        {{ paginaSeleccionada.title }}
+    {% endif %} |
+{% endblock %}
+
+{% block description %}
+    {% if paginaSeleccionada.metaDescription | length > 0 %}
+        {{ paginaSeleccionada.metaDescription }}
+    {% endif %}
+{% endblock %}
+
+{% block recursos %}
+    <script type="text/javascript">
+        function changeMainImageSource(evt) {
+            $('#main-img').attr("src", evt.src);
+        }
+    </script>
+{% endblock recursos %}
+
+{% block principal %}
+    <div class="constrictor clearfix">
+        <div class="menu-nivel-uno-lateral-izq">
+            {% set menuItem = knp_menu_get(app.request.locale ~ 'top', ['cal menescal']) %}
+            {{ knp_menu_render(menuItem) }}
+        </div>
+        <div class="menu-nivel-uno-lateral-der2">
+            {% if paginaSeleccionada.image2 %}
+                {% if paginaSeleccionada.image3 %}
+                    {# HI HA MES DE 1 IMATGE, ES NECESSARI EL PANELL DE MINIATURES #}
+                    <div class="menu-nivel-uno-lateral-der2-imgpanel">
+                        <div class="menu-nivel-uno-lateral-der2-imgpanel-main">
+                            <img id="main-img" src="{{ vich_uploader_asset(paginaSeleccionada, 'image2File') | imagine_filter('imatge500x220') }}" alt="{{ paginaSeleccionada.altImage2 }}" title="{{ paginaSeleccionada.titleImage2 }}">
+                        </div>
+                        <div class="menu-nivel-uno-lateral-der2-imgpanel-right">
+                            {% if paginaSeleccionada.image2 %}
+                                <img onmouseover="changeMainImageSource(this)" onclick="changeMainImageSource(this)" src="{{ vich_uploader_asset(paginaSeleccionada, 'image2File') | imagine_filter('imatge500x220') }}" alt="{{ paginaSeleccionada.altImage2 }}" title="{{ paginaSeleccionada.titleImage2 }}">
+                            {% endif %}
+                            {% if paginaSeleccionada.image3 %}
+                                <img onmouseover="changeMainImageSource(this)" onclick="changeMainImageSource(this)" src="{{ vich_uploader_asset(paginaSeleccionada, 'image3File') | imagine_filter('imatge500x220') }}" alt="{{ paginaSeleccionada.altImage3 }}" title="{{ paginaSeleccionada.titleImage3 }}">
+                            {% endif %}
+                            {% if paginaSeleccionada.image4 %}
+                                <img onmouseover="changeMainImageSource(this)" onclick="changeMainImageSource(this)" src="{{ vich_uploader_asset(paginaSeleccionada, 'image4File') | imagine_filter('imatge500x220') }}" alt="{{ paginaSeleccionada.altImage4 }}" title="{{ paginaSeleccionada.titleImage4 }}">
+                            {% endif %}
+                        </div>
+                    </div>
+                {% else %}
+                    {# NOMES HI HA 1 IMATGE, NO ES NECESSARI EL PANELL DE MINIATURES #}
+                    <div class="menu-nivel-uno-lateral-der2-imgpanel">
+                        <div class="menu-nivel-uno-lateral-der2-imgpanel-main-only-one">
+                            <img src="{{ vich_uploader_asset(paginaSeleccionada, 'image2File') | imagine_filter('imatge620x220') }}" alt="{{ paginaSeleccionada.altImage2 }}" title="{{ paginaSeleccionada.titleImage2 }}">
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
+            <h1>{{ paginaSeleccionada.title }}</h1>
+            <p>{{ paginaSeleccionada.text1 | raw }}</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block peuidiomes %}
+    {% if app.request.locale != 'ca' %}<a href="{{ path('calmenescal_detail_ca', {_locale: 'ca', title: slugTitleCA}) }}">català</a> ·{% endif %}
+    {% if app.request.locale != 'es' %}<a href="{{ path('calmenescal_detail_es', {_locale: 'es', title: slugTitleES}) }}">español</a> {% if app.request.locale != 'en' %}·{% endif %}{% endif %}
+    {% if app.request.locale != 'en' %}<a href="{{ path('calmenescal_detail_en', {_locale: 'en', title: slugTitleEN}) }}">english</a>{% endif %}<br/>
+{% endblock %}

@@ -1,0 +1,118 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: sonata.yml }
+    - { resource: media.yml }
+
+# Framework
+framework:
+    translator:      { fallbacks: [ "%locale%" ] }
+    validation:      { enable_annotations: true }
+    default_locale:  "%locale%"
+    secret:          "%secret%"
+    form:            ~
+    csrf_protection: ~
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    fragments:       ~
+    router:
+        resource:            "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    templating:
+        engines: [ "twig" ]
+    session:
+        name:        CMSESSID
+        handler_id:  ~
+    http_method_override: true
+
+# Assetic
+assetic:
+    debug:          "%kernel.debug%"
+    use_controller: false
+    java:           "%path_java%"
+    node:           "%path_node%"
+    filters:
+        cssrewrite: ~
+        less:
+            node:       "%path_node%"
+            node_paths: [ "%path_node_modules%" ]
+
+# Twig
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+    form_themes:
+        - "bootstrap_3_layout.html.twig"
+        - "SonataCoreBundle:Form:datepicker.html.twig"
+#        - "::Admin/Form/action_button_from_template.html.twig"
+#        - "::MainBundle:Admin:form.html.twig"
+    globals:
+        admin_tag_version:        "v2.0.8"
+        main_brand_title:         "%project_web_title%"
+        google_analytics_enabled: "%google_analytics_enabled%"
+        google_analytics_account: "%google_analytics_account%"
+        google_maps_api_key:      "%google_maps_api_key%"
+
+# Doctrine
+doctrine:
+    dbal:
+        server_version: "%database_server_version%"
+        driver:         "%database_driver%"
+        host:           "%database_host%"
+        port:           "%database_port%"
+        dbname:         "%database_name%"
+        user:           "%database_user%"
+        password:       "%database_password%"
+        charset:        UTF8
+        types:
+            json: Sonata\Doctrine\Types\JsonType
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        naming_strategy:             doctrine.orm.naming_strategy.underscore
+        auto_mapping:                true
+
+# Stof Doctrine Extensions
+stof_doctrine_extensions:
+    default_locale: "%locale%"
+    translation_fallback:  true
+    orm:
+        default:
+            softdeleteable: false
+            timestampable:  true
+            sluggable:      true
+            translatable:   true
+            sortable:       false
+            tree:           false
+
+# A2Lix Translations
+a2lix_translation_form:
+    default_required: true
+    locales:          "%locale_i18n%"
+    manager_registry: doctrine
+    templating:       "MainBundle:A2lix:default.html.twig"
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport:  "%mailer_transport%"
+    host:       "%mailer_host%"
+    username:   "%mailer_user%"
+    password:   "%mailer_password%"
+    spool:      { type: memory }
+
+# CKEditor
+ivory_ck_editor:
+    default_config: my_config
+    configs:
+        my_config:
+            toolbar: full
+
+# Friends Of Symfony (FOS)
+fos_user:
+    db_driver:      orm # can be orm or odm
+    firewall_name:  admin
+    user_class:     Application\Sonata\UserBundle\Entity\User
+    group:
+        group_class: Application\Sonata\UserBundle\Entity\Group
+    service:
+        user_manager: sonata.user.orm.user_manager

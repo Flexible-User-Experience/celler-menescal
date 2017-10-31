@@ -1,0 +1,69 @@
+# Sonata Block
+sonata_block:
+    default_contexts: [ admin ]
+    blocks:
+        sonata.user.block.menu:
+        sonata.user.block.account:
+        sonata.block.service.text:
+        sonata.admin.block.admin_list:
+
+# Sonata Admin
+sonata_admin:
+    title:      "Administrador"
+    title_logo: "/favicon.png"
+    options:
+        html5_validate: true
+        confirm_exit:   true
+        use_select2:    true
+        pager_links:    10
+    persist_filters: true
+    security:
+        handler: sonata.admin.security.handler.role
+    templates:
+        layout: "MainBundle:Admin:standard_layout_tinymce.html.twig"
+    dashboard:
+        groups:
+            Pàgines:
+                icon: "<i class='fa fa-file-text-o'></i>"
+            Vins:
+                icon: "<i class='fa fa-pagelines'></i>"
+            Activitats:
+                icon: "<i class='fa fa-camera-retro'></i>"
+        blocks:
+            -
+                position: top
+                type: sonata.block.service.text
+                class: col-xs-12
+                settings:
+                    content: >
+                        <h2 style="margin:0 0 40px 0">Administrador continguts pàgina web Celler Menescal</h2>
+            -
+                position: top
+                type: sonata.admin.block.admin_list
+                class: col-md-4
+                settings:
+                    groups: [ Pàgines ]
+            -
+                position: top
+                type: sonata.admin.block.admin_list
+                class: col-md-4
+                settings:
+                    groups: [ Vins ]
+            -
+                position: top
+                type: sonata.admin.block.admin_list
+                class: col-md-4
+                settings:
+                    groups: [ Activitats ]
+            -
+                position: bottom
+                type: sonata.block.service.text
+                class: col-md-12
+                settings:
+                    content: >
+                        <div><hr style="margin-top:40px;border-top:solid 1px #d2d6de"><p><i class="fa fa-info-circle"></i> Suport tècnic aquí <a href="mailto:suport@flux.cat?subject=Celler Menescal CMS help" style="color:#000">suport@flux.cat</a></p></div>
+
+# User
+sonata_user:
+    security_acl: true
+    manager_type: orm

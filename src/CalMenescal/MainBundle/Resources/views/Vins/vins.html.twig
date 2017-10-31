@@ -1,0 +1,24 @@
+{% extends 'MainBundle:Global:layout.html.twig' %}
+{% block titulo %}
+    {% trans %}titulo.vinos{% endtrans %} |
+{% endblock %}
+{% block description %}
+    {% trans %}description.vinos{% endtrans %}
+{% endblock %}
+{% block recursos %}
+{% endblock recursos %}
+{% block principal %}
+    <div class="constrictor clearfix">
+        {% for categoria in categories %}
+            <div class="panel-segundo-nivel-vinos {% if (loop.index % 6 - 1) == 0 %}primero{% endif %}">
+                <a href="{{ path('elsvins_level1_' ~ app.request.locale, {'title' : categoria.titleSlug}) }}"><img src="{{ vich_uploader_asset(categoria, 'image1File') | imagine_filter('imatge140x307') }}" alt="{{ categoria.altImage1 }}" title="{{ categoria.titleImage1 }}"></a>
+                <a href="{{ path('elsvins_level1_' ~ app.request.locale, {'title' : categoria.titleSlug}) }}" class="panel-segundo-nivel-vinos">{{ categoria.title }}</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block peuidiomes %}
+    {% if app.request.locale != 'ca' %}<a href="{{ path('elsvins_ca', {'_locale' : 'ca'}) }}">català</a> ·{% endif %}
+    {% if app.request.locale != 'es' %}<a href="{{ path('elsvins_es', {'_locale' : 'es'}) }}">español</a> {% if app.request.locale != 'en' %}·{% endif %}{% endif %}
+    {% if app.request.locale != 'en' %}<a href="{{ path('elsvins_en', {'_locale' : 'en'}) }}">english</a>{% endif %}<br/>
+{% endblock %}

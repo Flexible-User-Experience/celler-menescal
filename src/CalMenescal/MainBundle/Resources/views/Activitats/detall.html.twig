@@ -1,0 +1,60 @@
+{% extends "MainBundle:Global:layout.html.twig" %}
+
+{% block titulo %}
+    {% if paginaSeleccionada.metaTitle | length > 0 %}
+        {{ paginaSeleccionada.metaTitle }}
+    {% else %}
+        {{ paginaSeleccionada.title }}
+    {% endif %} |
+{% endblock %}
+
+{% block description %}
+    {% if paginaSeleccionada.metaDescription | length > 0 %}
+        {{ paginaSeleccionada.metaDescription }}
+    {% endif %}
+{% endblock %}
+
+{% block recursos %}{% endblock recursos %}
+
+{% block principal %}
+    <div class="constrictor clearfix">
+        <div class="menu-nivel-uno-lateral-izq">
+            {% set menuItem = knp_menu_get(app.request.locale ~ 'top', ['activitats']) %}
+            {{ knp_menu_render(menuItem) }}
+        </div>
+        <div class="menu-nivel-uno-lateral-der-actividades">
+            {% for activitat in activitats %}
+                <h1>{{ activitat.title }}</h1>
+                {% if activitat.isPermanent == false %}
+                    {% if activitat.startDate %}
+                        <span class="fecha">
+                        {{ activitat.startDate | date('d/m/Y') }}
+                        {% if activitat.endDate %}
+                            -&nbsp;{{ activitat.endDate | date('d/m/Y') }}
+                        {% endif %}
+                        </span>
+                    {% endif %}
+                {% endif %}
+                {% if activitat.image1 %}
+                    <div class="menu-nivel-uno-lateral-der2-imgpanel-main-only-one">
+                        <img src="{{ vich_uploader_asset(activitat, 'image1File') | imagine_filter('imatge620x220') }}" alt="{{ activitat.altImage1 }}" title="{{ activitat.titleImage1 }}">
+                    </div>
+                {% endif %}
+                <p>{{ activitat.description | raw }}</p>
+                {% if activitat.conditions %}
+                    <h2>{% trans %}activitats.condicions{% endtrans %}</h2>
+                    <p>{{ activitat.conditions | raw }}</p>
+                {% endif %}
+                <hr>
+            {% else %}
+                <h1>{% trans %}activitats.noactivities{% endtrans %}</h1>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block peuidiomes %}
+    {% if app.request.locale != 'ca' %}<a href="{{ path('activitats_detail_ca', {_locale: 'ca', title: slugTitleCA}) }}">català</a> ·{% endif %}
+    {% if app.request.locale != 'es' %}<a href="{{ path('activitats_detail_es', {_locale: 'es', title: slugTitleES}) }}">español</a> {% if app.request.locale != 'en' %}·{% endif %}{% endif %}
+    {% if app.request.locale != 'en' %}<a href="{{ path('activitats_detail_en', {_locale: 'en', title: slugTitleEN}) }}">english</a>{% endif %}<br/>
+{% endblock %}

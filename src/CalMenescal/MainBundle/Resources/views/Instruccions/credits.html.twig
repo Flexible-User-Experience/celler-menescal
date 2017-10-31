@@ -1,0 +1,31 @@
+{% extends 'MainBundle:Global:layout.html.twig' %}
+{% block titulo %}
+    {% if pagina.metaTitle | length > 0 %}
+        {{ pagina.metaTitle }}
+    {% else %}
+        {{ pagina.title }}
+    {% endif %} |
+{% endblock %}
+{% block description %}
+    {% if pagina.metaDescription | length > 0 %}
+        {{ pagina.metaDescription }}
+    {% endif %}
+{% endblock %}
+{% block recursos %}
+{% endblock recursos %}
+{% block principal %}
+    <div class="constrictor clearfix">
+        <div class="menu-nivel-uno-lateral-izq">
+            <img src="{{ vich_uploader_asset(pagina, 'image1File') | imagine_filter('imatge280xY') }}" alt="{{ pagina.altImage1 }}" title="{{ pagina.titleImage1 }}">
+        </div>
+        <div class="menu-nivel-uno-lateral-der-addons">
+            <h1>{{ pagina.title }}</h1>
+            <p>{{ pagina.text1 | raw }}</p>
+        </div>
+    </div>
+{% endblock %}
+{% block peuidiomes %}
+    {% if app.request.locale != 'ca' %}<a href="{{ path('credits_ca', {'_locale' : 'ca'}) }}">català</a> ·{% endif %}
+    {% if app.request.locale != 'es' %}<a href="{{ path('credits_es', {'_locale' : 'es'}) }}">español</a> {% if app.request.locale != 'en' %}·{% endif %}{% endif %}
+    {% if app.request.locale != 'en' %}<a href="{{ path('credits_en', {'_locale' : 'en'}) }}">english</a>{% endif %}<br/>
+{% endblock %}

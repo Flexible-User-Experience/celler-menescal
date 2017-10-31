@@ -1,0 +1,42 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     symfony
+    database_user:     root
+    database_password: ~
+    database_server_version: 5.7
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+
+    path_java: /usr/bin/java
+    path_node: /usr/local/bin/node
+    path_node_modules: /Users/<USERNAME>/node_modules
+
+    private_admin_test_user: admin
+    private_admin_test_pass: admin
+    private_admin_test_email: email@email.com
+    private_admin_test_name: firstname
+    private_admin_test_surname: lastname
+    private_editor_test_user: user
+    private_editor_test_pass: user
+    private_editor_test_email: email@email.com
+    private_editor_test_name: firstname
+    private_editor_test_surname: lastname
+
+    # A secret key that's used to generate certain security-related tokens
+    secret:            Th1sT0kenIsN0tS0SecretChXng31t
+
+    locale:      ca
+    locale_i18n: [ es, en ]
+
+    project_web_title: "Celler Menescal"
+
+    google_analytics_enabled: false
+    google_analytics_account: "UA-xxxxxxxx-x"
+    google_maps_api_key:      "<YOUR-GMAP-API-KEY>"
+
+    dev_delivery_address: "your@email.com"

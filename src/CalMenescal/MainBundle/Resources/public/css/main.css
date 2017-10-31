@@ -1,0 +1,930 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html, button, input, select, textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+    font-family: 'Marvel', sans-serif;
+}
+
+/*@font-face {
+    font-family: 'GothamRnd';
+    src: url('/fonts/otf/gothamrndmedium.otf');
+    src: url('/fonts/ttf/gothamrndmedium.ttf') format('truetype'),
+         url('/fonts/svg/gothamrndmedium.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+div.constrictor {
+    width: 940px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+a {
+    color: #6C1D45;
+}
+
+/**
+ * HEADER
+ */
+header {
+    margin-bottom: 40px;
+    top: 0;
+    background: #FFF;
+}
+
+header div.constrictor.clearfix h1.invisible {
+    font-size: 0.5em;
+    margin: 0;
+    display: none;
+}
+
+header div.constrictor.clearfix ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    float: left;
+    display: block;
+    width: 940px;
+    background-color: #000;
+    font-size: 18px;
+}
+
+header div.constrictor.clearfix ul li {
+    float: left;
+    list-style-image: url(../images/rombonegre.png);
+    list-style-position: inside;
+}
+
+header div.constrictor.clearfix ul li.current,
+ header div.constrictor.clearfix ul li.current_ancestor {
+    background-color: #6C1D45;
+    list-style-image: url(../images/romboblanc.png);
+}
+
+header div.constrictor.clearfix ul li a {
+    width: 100%;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 7px 24px 5px;
+    transition: color 0.25s;
+    -moz-transition: color 0.25s;
+    -webkit-transition: color 0.25s;
+    -o-transition: color 0.25s;
+}
+
+header div.constrictor.clearfix ul li a:hover {
+    color: #6C1D45;
+}
+
+header div.constrictor.clearfix ul li.current a:hover,
+ header div.constrictor.clearfix ul li.current_ancestor a:hover {
+    color: #FFF;
+}
+
+
+
+/**
+ * MAIN
+ */
+div#principal {
+    min-height: 400px;
+}
+
+
+
+/*
+ * Landing Page
+ */
+div#principal div.constrictor.clearfix div.home-panel {
+    float: left;
+    width: 280px;
+    margin-right: 50px;
+    font-size: 20px;
+}
+
+div#principal div.constrictor.clearfix div.home-panel:last-child {
+    float: right;
+    width: 280px;
+    font-size: 20px;
+    margin-right: 0;
+}
+
+div#principal div.constrictor.clearfix div.home-panel img {
+    transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s;
+    -webkit-transition: opacity 0.25s;
+    -o-transition: opacity 0.25s;
+}
+
+div#principal div.constrictor.clearfix div.home-panel img:hover {
+    opacity: 0.75;
+}
+
+div#principal div.constrictor.clearfix div.home-panel p {
+    margin: 20px 0;
+}
+
+
+
+/*
+ * Cal Menescal Inici
+ */
+div#principal div.constrictor.clearfix a div.panel-segundo-nivel {
+    width: 280px;
+    height: 220px;
+    margin: 0 0 20px 20px;
+    float: left;
+    background-color: #E3E3E3;
+    padding-right: 20px;
+    transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s;
+    -webkit-transition: opacity 0.25s;
+    -o-transition: opacity 0.25s;
+}
+
+div#principal div.constrictor.clearfix a div.panel-segundo-nivel:hover {
+    opacity: 0.75;
+}
+
+div#principal div.constrictor.clearfix a div.panel-segundo-nivel div.base-interior {
+    float: left;
+    width: 160px;
+}
+
+div#principal div.constrictor.clearfix a div.panel-segundo-nivel.primero {
+    margin: 0 0 20px 0;
+}
+
+div#principal div.constrictor.clearfix a div.panel-segundo-nivel img {
+    float: left;
+    margin-right: 20px;
+}
+
+div#principal div.constrictor.clearfix a div.panel-segundo-nivel h1 {
+    font-size: 30px;
+    border-bottom: solid 1px #6C1D45;
+    color: #6C1D45;
+}
+
+div#principal div.constrictor.clearfix a div.panel-segundo-nivel p {
+    color: #000;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq {
+    float: left;
+    width: 280px;
+    margin-right: 40px;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der {
+    float: left;
+    width: 480px;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der2 {
+    float: left;
+    width: 620px;
+    font-family: Arial, sans-serif;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der2 p {
+    font-family: Arial, sans-serif;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der2 h1 {
+    border-bottom: solid 1px #000;
+    color: #6C1D45;
+    margin-bottom: 10px;
+    margin-top: 0;
+    font-family: Marvel, sans-serif;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der2 div.menu-nivel-uno-lateral-der2-imgpanel {
+    width: 620px;
+    height: 220px;
+    display: block;
+    margin-bottom: 30px;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der2 div.menu-nivel-uno-lateral-der2-imgpanel div.menu-nivel-uno-lateral-der2-imgpanel-main {
+    width: 500px;
+    height: 220px;
+    display: block;
+    margin-right: 20px;
+    float: left;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der2 div.menu-nivel-uno-lateral-der2-imgpanel div.menu-nivel-uno-lateral-der2-imgpanel-right img {
+    margin-bottom: 20px;
+    width: 100px;
+    height: 60px;
+    transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s;
+    -webkit-transition: opacity 0.25s;
+    -o-transition: opacity 0.25s;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der2 div.menu-nivel-uno-lateral-der2-imgpanel div.menu-nivel-uno-lateral-der2-imgpanel-right img:hover {
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq ul {
+    margin: 0;
+    padding: 0;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq ul li {
+    margin: 0;
+    padding: 0;
+    border-bottom: solid 1px #000;
+    list-style-image: url(../images/romboblanc.png);
+    list-style-position: inside;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq ul li.current {
+    list-style-image: url(../images/rombogranate.png);
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq ul li:last-child {
+    border-bottom: none;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq ul li a {
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    transition: color 0.25s;
+    -moz-transition: color 0.25s;
+    -webkit-transition: color 0.25s;
+    -o-transition: color 0.25s;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq ul li a:hover {
+    color: #6C1D45;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq ul li.current a {
+    color: #6C1D45;
+    font-weight: bold;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq ul li ul.menu_level_2 {
+    display: none;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq ul li.current ul.menu_level_2,
+ div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq ul li.current_ancestor ul.menu_level_2 {
+    display: block;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq ul li.current ul.menu_level_2,
+ div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq ul li.current_ancestor ul.menu_level_2 {
+    border-top: solid 1px #000;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq ul li.current ul.menu_level_2 li a,
+ div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-izq ul li.current_ancestor ul.menu_level_2 li a {
+    padding-left: 30px;
+}
+
+
+/*
+ * Els vins
+ */
+div#principal div.constrictor.clearfix div.panel-segundo-nivel-vinos {
+    margin: 0 0 0 20px;
+    width: 140px;
+    float: left;
+    text-align: center;
+}
+
+div#principal div.constrictor.clearfix div.panel-segundo-nivel-vinos.primero {
+    margin: 0;
+}
+
+div#principal div.constrictor.clearfix div.panel-segundo-nivel-vinos img {
+    transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s;
+    -webkit-transition: opacity 0.25s;
+    -o-transition: opacity 0.25s;
+}
+
+div#principal div.constrictor.clearfix div.panel-segundo-nivel-vinos img:hover {
+    opacity: 0.75;
+}
+
+div#principal div.constrictor.clearfix div.panel-segundo-nivel-vinos a.panel-segundo-nivel-vinos {
+    padding: 5px 20px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.25s;
+    -moz-transition: background-color 0.25s;
+    -webkit-transition: background-color 0.25s;
+    -o-transition: background-color 0.25s;
+    text-align: center;
+    background-color: #6C1D45;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 3px #666;
+    font-size: 16px;
+}
+
+div#principal div.constrictor.clearfix div.panel-segundo-nivel-vinos a.panel-segundo-nivel-vinos:hover {
+    background-color: #000;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-cen {
+    float: left;
+    width: 167px;
+    margin-left: 27px;
+    margin-right: 40px;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-vinos {
+    float: right;
+    width: 370px;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-vinos h1 {
+    margin: 0;
+    border-bottom: solid 1px #000;
+    color: #6C1D45;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-vinos h2 {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-vinos div.panel-informativo-vinos-variedades {
+    background-color: #6C1D45;
+    margin: 0 0 40px 0;
+    padding: 10px;
+    color: #FFF;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-vinos div.panel-informativo-vinos-variedades img {
+    float: left;
+    margin-right: 10px;
+    margin-top: -3px;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-vinos div.panel-informativo-vinos-variedades p {
+    margin: 0;
+    padding: 0;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-vinos div.panel-informativo-vinos {
+    background-color: #E3E3E3;
+    margin: 0;
+    padding: 0;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-vinos div.panel-informativo-vinos ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 100%;
+    background-color: #FFF;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-vinos div.panel-informativo-vinos ul li {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style-type: none;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-vinos div.panel-informativo-vinos ul li a {
+    margin: 0;
+    background-color: #000;
+    color: #FFF;
+    padding: 5px 20px;
+    display: block;
+    cursor: pointer;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-vinos div.panel-informativo-vinos ul li a.selected {
+    background-color: #E3E3E3;
+    color: #000;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-vinos div.panel-informativo-vinos div {
+    padding: 20px 10px;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-vinos div.panel-informativo-vinos div.current {
+    display: block;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-vinos div.panel-informativo-vinos div p {
+    margin-top: 30px;
+    font-family: Arial, sans-serif;
+    font-size: 0.95em;
+}
+
+/*
+ * Activitats
+ */
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-actividades {
+    float: left;
+    width: 620px;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-actividades h1 {
+    color: #6C1D45;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-actividades p {
+    font-family: Arial, sans-serif;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-actividades span.fecha {
+    font-weight: bolder;
+    font-size: 1.1em;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-actividades h2 {
+    color: #6C1D45;
+    margin-bottom: 0;
+    border-bottom: solid 1px #6C1D45;
+    font-size: 1em;
+}
+
+
+
+/*
+ * Contacte
+ */
+div#principal div.constrictor.clearfix div.panel-contacto-izq,
+ div#principal div.constrictor.clearfix div.panel-contacto-der {
+    float: left;
+    width: 470px;
+}
+
+div#principal div.constrictor.clearfix div.panel-contacto-izq p img {
+    margin-right: 10px;
+}
+
+div#principal div.constrictor.clearfix div.panel-contacto-izq h3,
+ div#principal div.constrictor.clearfix div.panel-contacto-der h3 {
+    font-size: 26px;
+    color: #6C1D45;
+}
+
+div#principal div.constrictor.clearfix div.panel-contacto-der form {
+    background-color: #E3E3E3;
+    padding: 20px;
+    border-radius: 4px;
+    height: 235px;
+}
+
+div#principal div.constrictor.clearfix div.panel-contacto-der form div {
+    margin-bottom: 20px;
+}
+
+div#principal div.constrictor.clearfix div.panel-contacto-der form div label {
+    width: 80px;
+    float: left;
+}
+
+div#principal div.constrictor.clearfix div.panel-contacto-der form div input,
+ div#principal div.constrictor.clearfix div.panel-contacto-der form div textarea {
+    width: 342px;
+    border: none;
+    border-radius: 2px;
+    height: 22px;
+    padding: 4px;
+}
+
+div#principal div.constrictor.clearfix div.panel-contacto-der form div textarea {
+    width: 342px;
+    resize: none;
+    height: 80px;
+}
+
+div#principal div.constrictor.clearfix div.panel-contacto-der form input[type="submit"].boton {
+    padding: 5px 20px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.25s;
+    -moz-transition: background-color 0.25s;
+    -webkit-transition: background-color 0.25s;
+    -o-transition: background-color 0.25s;
+    text-align: center;
+    background-color: #6C1D45;
+    text-transform: uppercase;
+    font-family: "Marvel";
+    font-size: 16px;
+    float: right;
+    border: none;
+    box-shadow: 2px 2px 3px #666;
+}
+
+div#principal div.constrictor.clearfix div.panel-contacto-der form input[type="submit"].boton:hover {
+    background-color: #000;
+}
+
+
+/*
+ * AddOns - Instruccions
+ */
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-addons {
+    float: left;
+    width: 620px;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-addons h1 {
+    margin-top: 0;
+    border-bottom: solid 1px #000;
+    color: #6C1D45;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-addons p {
+    font-family: Arial, sans-serif;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-addons p a {
+    color: #6C1D45;
+    font-weight: bold;
+}
+
+div#principal div.constrictor.clearfix div.menu-nivel-uno-lateral-der-addons h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #6C1D45;
+}
+
+
+/*
+ * Footer
+ */
+footer {
+    color: #FFF;
+    font-size: 14px;
+    margin-top: 60px;
+}
+
+footer div.constrictor.clearfix div.base {
+    background-color: #606060;
+    height: 80px;
+    padding: 20px;
+}
+
+footer div.constrictor.clearfix div.base div.columna {
+    float: left;
+    margin-right: 30px;
+    min-height: 50px;
+}
+
+footer div.constrictor.clearfix div.base div.columna.tres {
+    margin-left: 116px;
+}
+
+footer div.constrictor.clearfix div.base div.columnafinal {
+    float: right;
+    text-align: right;
+}
+
+footer div.constrictor.clearfix div a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+footer div.constrictor.clearfix div a:hover {
+    text-decoration: underline;
+}
+
+footer div.constrictor.clearfix div p {
+    margin: 0;
+}
+
+
+
+/*
+ * Actions
+ */
+a.call-to-action {
+    padding: 5px 20px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.25s;
+    -moz-transition: background-color 0.25s;
+    -webkit-transition: background-color 0.25s;
+    -o-transition: background-color 0.25s;
+    text-align: center;
+    background-color: #6C1D45;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 3px #666;
+    font-size: 16px;
+}
+
+a.call-to-action:hover {
+    background-color: #000;
+}
+
+a.call-to-action.red {
+    background: #D84359;
+}
+
+a.call-to-action.grey {
+    background: #999;
+}
+
+a.call-to-action.green {
+    background: #8BC06D;
+}
+
+a.call-to-action.black {
+    background: #000;
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow:none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

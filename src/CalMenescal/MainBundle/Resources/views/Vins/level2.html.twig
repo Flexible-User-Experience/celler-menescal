@@ -1,0 +1,99 @@
+{% extends "MainBundle:Global:layout.html.twig" %}
+
+{% block titulo %}
+    {% if viSeleccionat.metaTitle | length > 0 %}
+        {{ viSeleccionat.metaTitle }}
+    {% else %}
+        {{ viSeleccionat.name }}
+    {% endif %} |
+{% endblock %}
+
+{% block description %}
+    {% if viSeleccionat.metaDescription | length > 0 %}
+        {{ viSeleccionat.metaDescription }}
+    {% endif %}
+{% endblock %}
+
+{% block recursos %}
+    <script type="text/javascript">
+        function selectVinification(evt) {
+            $('#a-vinification').attr('class', 'selected');
+            $('#a-taste').attr('class', 'not-selected');
+            $('#a-marriage').attr('class', 'not-selected');
+            $('#vinification').attr('class', 'current');
+            $('#taste').attr('class', 'hidden');
+            $('#marriage').attr('class', 'hidden');
+        }
+        function selectTaste(evt) {
+            $('#a-vinification').attr('class', 'not-selected');
+            $('#a-taste').attr('class', 'selected');
+            $('#a-marriage').attr('class', 'not-selected');
+            $('#vinification').attr('class', 'hidden');
+            $('#taste').attr('class', 'current');
+            $('#marriage').attr('class', 'hidden');
+        }
+        function selectMarriage(evt) {
+            $('#a-vinification').attr('class', 'not-selected');
+            $('#a-taste').attr('class', 'not-selected');
+            $('#a-marriage').attr('class', 'selected');
+            $('#vinification').attr('class', 'hidden');
+            $('#taste').attr('class', 'hidden');
+            $('#marriage').attr('class', 'current');
+        }
+    </script>
+{% endblock recursos %}
+
+{% block principal %}
+    <div class="constrictor clearfix">
+        <div class="menu-nivel-uno-lateral-izq">
+            {% set menuItem = knp_menu_get(app.request.locale ~ 'top', ['vins']) %}
+            {{ knp_menu_render(menuItem, {depth: 2}) }}
+        </div>
+        <div class="menu-nivel-uno-lateral-cen">
+            <img src="{{ vich_uploader_asset(viSeleccionat, 'image1File') | imagine_filter('imatge167x500') }}" alt="{{ viSeleccionat.altImage1 }}" title="{{ viSeleccionat.titleImage1 }}">
+        </div>
+        <div class="menu-nivel-uno-lateral-der-vinos">
+            <h1>{{ viSeleccionat.name }}</h1>
+            <h2>{{ viSeleccionat.degrees }}º {{ viSeleccionat.type }}</h2>
+            {% if viSeleccionat.mix %}
+                <div class="panel-informativo-vinos-variedades">
+                    <img src="{{ asset('bundles/main/images/raimblanc.png') }}" alt="Grapes logo">
+                    <p>{{ viSeleccionat.mix }}</p>
+                </div>
+            {% endif %}
+            <div class="panel-informativo-vinos">
+                <ul>
+                    <li><a class="selected" onclick="selectVinification(this);" id="a-vinification">{% trans %}vinos.vinificacion{% endtrans %}</a></li>
+                    <li><a class="not-selected" onclick="selectTaste(this);" id="a-taste">{% trans %}vinos.cata{% endtrans %}</a></li>
+                    <li><a class="not-selected" onclick="selectMarriage(this);" id="a-marriage">{% trans %}vinos.maridaje{% endtrans %}</a></li>
+                </ul>
+                <div id="vinification" class="current">
+                    <p>{{ viSeleccionat.vinification | raw }}</p>
+                </div>
+                <div id="taste" class="hidden">
+                    <p>{{ viSeleccionat.tasteNote | raw }}</p>
+                </div>
+                <div id="marriage" class="hidden">
+                    <p>{{ viSeleccionat.marriage | raw }}</p>
+                </div>
+            </div>
+            <iframe src="//www.facebook.com/plugins/like.php?href={{ url('elsvins_level2_' ~ app.request.locale, { title: categoriaSeleccionada.titleSlug(), wine: viSeleccionat.getSlug() } ) }}&amp;send=false&amp;layout=button_count&amp;width=250&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=167440589985790" scrolling="no" frameborder="0" style="margin:15px 15px 0 0; border:none; overflow:visible; width:120px; height:21px;" allowTransparency="true"></iframe>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="celler_menescal">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            <!-- div class="g-plusone" data-size="medium" data-annotation="inline" data-width="120"></div>
+            <script type="text/javascript">
+                (function() {
+                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                    po.src = 'https://apis.google.com/js/plusone.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                })();
+            </script -->
+        </div>
+    </div>
+{% endblock %}
+
+{% block peuidiomes %}
+    {% if app.request.locale != 'ca' %}<a href="{{ path('elsvins_level2_ca', {_locale: 'ca', title: slugTitleCA, wine: slugWineCA}) }}">català</a> ·{% endif %}
+    {% if app.request.locale != 'es' %}<a href="{{ path('elsvins_level2_es', {_locale: 'es', title: slugTitleES, wine: slugWineES}) }}">español</a> {% if app.request.locale != 'en' %}·{% endif %}{% endif %}
+    {% if app.request.locale != 'en' %}<a href="{{ path('elsvins_level2_en', {_locale: 'en', title: slugTitleEN, wine: slugWineEN}) }}">english</a>{% endif %}<br/>
+{% endblock %}

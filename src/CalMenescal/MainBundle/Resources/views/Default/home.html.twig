@@ -1,0 +1,31 @@
+{% extends "MainBundle:Global:layout.html.twig" %}
+
+{% block description %}{% trans %}home.metadescription{% endtrans %}{% endblock %}
+
+{% block recursos %}{% endblock recursos %}
+
+{% block principal %}
+    <div class="constrictor clearfix">
+        <div class="home-panel">
+            <a href="{{ path('elsvins_' ~ app.request.locale) }}"><img src="{{ asset('bundles/main/images/vins.png') }}" alt="" title=""></a>
+            <p>{% trans %}home.gaudeix{% endtrans %}</p>
+            <a class="call-to-action" href="{{ path('elsvins_' ~ app.request.locale) }}">vins</a>
+        </div>
+        <div class="home-panel">
+            <a href="{{ path('activitats_' ~ app.request.locale) }}"><img src="{{ asset('bundles/main/images/activitats.png') }}" alt="" title=""></a>
+            <p>{% trans %}home.activitats{% endtrans %}</p>
+            <a class="call-to-action" href="{{ path('activitats_' ~ app.request.locale) }}">activitats</a>
+        </div>
+        <div class="home-panel">
+            <a href=""><img src="{{ asset('bundles/main/images/casamuseu.png') }}" alt="" title=""></a>
+            <p>{% trans %}home.experimenta{% endtrans %}</p>
+            <a class="call-to-action" href="">casa-museu</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block peuidiomes %}
+    {% if app.request.locale != 'ca' %}<a href="{{ path('home_ca', {'_locale' : 'ca'}) }}">català</a> ·{% endif %}
+    {% if app.request.locale != 'es' %}<a href="{{ path('home_es', {'_locale' : 'es'}) }}">español</a> {% if app.request.locale != 'en' %}·{% endif %}{% endif %}
+    {% if app.request.locale != 'en' %}<a href="{{ path('home_en', {'_locale' : 'en'}) }}">english</a>{% endif %}<br/>
+{% endblock %}

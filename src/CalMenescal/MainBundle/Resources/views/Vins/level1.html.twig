@@ -1,0 +1,33 @@
+{% extends "MainBundle:Global:layout.html.twig" %}
+
+{% block titulo %}
+    {% if categoriaSeleccionada.metaTitle | length > 0 %}
+        {{ categoriaSeleccionada.metaTitle }}
+    {% else %}
+        {{ categoriaSeleccionada.title }}
+    {% endif %} |
+{% endblock %}
+
+{% block description %}
+    {% if categoriaSeleccionada.metaDescription | length > 0 %}
+        {{ categoriaSeleccionada.metaDescription }}
+    {% endif %}
+{% endblock %}
+
+{% block recursos %}{% endblock recursos %}
+
+{% block principal %}
+    <div class="constrictor clearfix">
+        <div class="menu-nivel-uno-lateral-izq">
+            {% set menuItem = knp_menu_get(app.request.locale ~ 'top', ['vins']) %}
+            {{ knp_menu_render(menuItem, {depth: 2}) }}
+        </div>
+        <div class="menu-nivel-uno-lateral-der"></div>
+    </div>
+{% endblock %}
+
+{% block peuidiomes %}
+    {% if app.request.locale != 'ca' %}<a href="{{ path('elsvins_level1_ca', {_locale: 'ca', title: slugTitleCA}) }}">català</a> ·{% endif %}
+    {% if app.request.locale != 'es' %}<a href="{{ path('elsvins_level1_es', {_locale: 'es', title: slugTitleES}) }}">español</a> {% if app.request.locale != 'en' %}·{% endif %}{% endif %}
+    {% if app.request.locale != 'en' %}<a href="{{ path('elsvins_level1_en', {_locale: 'en', title: slugTitleEN}) }}">english</a>{% endif %}<br/>
+{% endblock %}

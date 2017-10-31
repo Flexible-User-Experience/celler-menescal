@@ -1,0 +1,230 @@
+### HOME
+home_ca:
+    path:           /{_locale}
+    defaults:       { _controller: MainBundle:Default:home }
+    requirements:
+        _locale:    ca
+
+home_es:
+    path:           /{_locale}
+    defaults:       { _controller: MainBundle:Default:home }
+    requirements:
+        _locale:    es
+
+home_en:
+    path:           /{_locale}
+    defaults:       { _controller: MainBundle:Default:home }
+    requirements:
+        _locale:    en
+
+### CAL MENESCAL
+calmenescal_ca:
+    path:           /{_locale}/inici
+    defaults:       { _controller: MainBundle:Inici:inici }
+    requirements:
+        _locale:    ca
+
+calmenescal_es:
+    path:           /{_locale}/inicio
+    defaults:       { _controller: MainBundle:Inici:inici }
+    requirements:
+        _locale:    es
+
+calmenescal_en:
+    path:           /{_locale}/home
+    defaults:       { _controller: MainBundle:Inici:inici }
+    requirements:
+        _locale:    en
+
+calmenescal_detail_ca:
+    path:           /{_locale}/inici/{title}
+    defaults:       { _controller: MainBundle:Inici:detall }
+    requirements:
+        _locale:    ca
+
+calmenescal_detail_es:
+    path:           /{_locale}/inicio/{title}
+    defaults:       { _controller: MainBundle:Inici:detall }
+    requirements:
+        _locale:    es
+
+calmenescal_detail_en:
+    path:           /{_locale}/home/{title}
+    defaults:       { _controller: MainBundle:Inici:detall }
+    requirements:
+        _locale:    en
+
+### ELS VINS
+elsvins_ca:
+    path:           /{_locale}/els-vins
+    defaults:       { _controller: MainBundle:Vins:vins }
+    requirements:
+        _locale:    ca
+
+elsvins_es:
+    path:           /{_locale}/los-vinos
+    defaults:       { _controller: MainBundle:Vins:vins }
+    requirements:
+        _locale:    es
+
+elsvins_en:
+    path:           /{_locale}/the-wines
+    defaults:       { _controller: MainBundle:Vins:vins }
+    requirements:
+        _locale:    en
+
+elsvins_level1_ca:
+    path:           /{_locale}/els-vins/{title}
+    defaults:       { _controller: MainBundle:Vins:level1 }
+    requirements:
+        _locale:    ca
+
+elsvins_level1_es:
+    path:           /{_locale}/los-vinos/{title}
+    defaults:       { _controller: MainBundle:Vins:level1 }
+    requirements:
+        _locale:    es
+
+elsvins_level1_en:
+    path:           /{_locale}/the-wines/{title}
+    defaults:       { _controller: MainBundle:Vins:level1 }
+    requirements:
+        _locale:    en
+
+elsvins_level2_ca:
+    path:           /{_locale}/vi/{title}/{wine}
+    defaults:       { _controller: MainBundle:Vins:level2 }
+    requirements:
+        _locale:    ca
+
+elsvins_level2_es:
+    path:           /{_locale}/vino/{title}/{wine}
+    defaults:       { _controller: MainBundle:Vins:level2 }
+    requirements:
+        _locale:    es
+
+elsvins_level2_en:
+    path:           /{_locale}/wine/{title}/{wine}
+    defaults:       { _controller: MainBundle:Vins:level2 }
+    requirements:
+        _locale:    en
+
+### ACTIVITATS
+activitats_ca:
+    path:           /{_locale}/enoturisme
+    defaults:       { _controller: MainBundle:Activitats:activitats }
+    requirements:
+        _locale:    ca
+
+activitats_es:
+    path:           /{_locale}/enoturismo
+    defaults:       { _controller: MainBundle:Activitats:activitats }
+    requirements:
+        _locale:    es
+
+activitats_en:
+    path:           /{_locale}/enotourism
+    defaults:       { _controller: MainBundle:Activitats:activitats }
+    requirements:
+        _locale:    en
+
+activitats_detail_ca:
+    path:           /{_locale}/enoturisme/{title}
+    defaults:       { _controller: MainBundle:Activitats:detall }
+    requirements:
+        _locale:    ca
+
+activitats_detail_es:
+    path:           /{_locale}/enoturismo/{title}
+    defaults:       { _controller: MainBundle:Activitats:detall }
+    requirements:
+        _locale:    es
+
+activitats_detail_en:
+    path:           /{_locale}/enotourism/{title}
+    defaults:       { _controller: MainBundle:Activitats:detall }
+    requirements:
+        _locale:    en
+
+### CONTACTE
+contacte_ca:
+    path:           /{_locale}/contacte
+    defaults:       { _controller: MainBundle:Contacte:contacte }
+    requirements:
+        _locale:    ca
+
+contacte_es:
+    path:           /{_locale}/contacto
+    defaults:       { _controller: MainBundle:Contacte:contacte }
+    requirements:
+        _locale:    es
+
+contacte_en:
+    path:           /{_locale}/contact
+    defaults:       { _controller: MainBundle:Contacte:contacte }
+    requirements:
+        _locale:    en
+
+thankyou_ca:
+    path:           /{_locale}/contacte/gracies
+    defaults:       { _controller: MainBundle:Contacte:thankyou }
+    requirements:
+        _locale:    ca
+
+thankyou_es:
+    path:           /{_locale}/contacto/gracias
+    defaults:       { _controller: MainBundle:Contacte:thankyou }
+    requirements:
+        _locale:    es
+
+thankyou_en:
+    path:           /{_locale}/contact/thank-you
+    defaults:       { _controller: MainBundle:Contacte:thankyou }
+    requirements:
+        _locale:    en
+
+### ADDONS - INSTRUCCIONS
+credits_ca:
+    path:           /{_locale}/credits
+    defaults:       { _controller: MainBundle:Instruccions:credits }
+    requirements:
+        _locale:    ca
+
+credits_es:
+    path:           /{_locale}/creditos
+    defaults:       { _controller: MainBundle:Instruccions:credits }
+    requirements:
+        _locale:    es
+
+credits_en:
+    path:           /{_locale}/credits
+    defaults:       { _controller: MainBundle:Instruccions:credits }
+    requirements:
+        _locale:    en
+
+privacitat_ca:
+    path:           /{_locale}/privacitat
+    defaults:       { _controller: MainBundle:Instruccions:privacitat }
+    requirements:
+        _locale:    ca
+
+privacitat_es:
+    path:           /{_locale}/privacidad
+    defaults:       { _controller: MainBundle:Instruccions:privacitat }
+    requirements:
+        _locale:    es
+
+privacitat_en:
+    path:           /{_locale}/privacy
+    defaults:       { _controller: MainBundle:Instruccions:privacitat }
+    requirements:
+        _locale:    en
+
+############################ GLOBAL
+sitemap:
+    path:           /sitemap
+    defaults:       { _controller: MainBundle:Default:sitemap, _format: xml }
+
+inicial:
+    path:           /
+    defaults:       { _controller: MainBundle:Default:home }

@@ -1,0 +1,45 @@
+{% extends 'MainBundle:Global:layout.html.twig' %}
+{% block titulo %}
+    {% trans %}titulo.contacto{% endtrans %} |
+{% endblock %}
+{% block description %}
+    {% trans %}description.contacto{% endtrans %}
+{% endblock %}
+{% block recursos %}
+{% endblock recursos %}
+{% block principal %}
+    <div class="constrictor clearfix" xmlns="http://www.w3.org/1999/html">
+        <div class="panel-contacto-google-maps">
+            <iframe width="940" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.es/maps?ie=UTF8&amp;cid=12449586163640848966&amp;q=Celler+Cal+Menescal+S.l.&amp;gl=ES&amp;hl=ca&amp;t=m&amp;iwloc=A&amp;ll=41.009867,0.385465&amp;spn=0.006295,0.006295&amp;output=embed"></iframe><br />
+            <small>
+                <a href="https://maps.google.es/maps?ie=UTF8&amp;cid=12449586163640848966&amp;q=Celler+Cal+Menescal+S.l.&amp;gl=ES&amp;hl=ca&amp;t=m&amp;iwloc=A&amp;ll=41.009867,0.385465&amp;spn=0.006295,0.006295&amp;source=embed" style="color:#6C1D45;text-align:left">Mostra un mapa més gran</a>
+            </small>
+        </div>
+        <div class="panel-contacto-izq">
+            <h3>{% trans %}contacto.informaciondecontacto{% endtrans %}</h3>
+            <p>
+                <img src="{{ asset('bundles/main/images/maps.png') }}" alt="Google Maps logo">C/ Joan Amades, 2<br/>
+                <img src="{{ asset('bundles/main/images/blanc.png') }}" alt="Blank logo">43875 Bot (Tarragona)<br/>
+                <img src="{{ asset('bundles/main/images/blanc.png') }}" alt="Blank logo">SPAIN<br/>
+                <img src="{{ asset('bundles/main/images/phone.png') }}" alt="iPhone logo">(+34) 977 428 095<br/>
+                <img src="{{ asset('bundles/main/images/mail.png') }}" alt="Email logo"><a href="mailto:info@cellermenescal.com">info@cellermenescal.com</a>
+            </p>
+        </div>
+        <div class="panel-contacto-der">
+            <h3>{% trans %}contacto.formulariodecontacto{% endtrans %}</h3>
+            <form action="{{ path('contacte_' ~ app.request.locale ) }}" method="post" {{ form_enctype(formulario) }}>
+                {{ form_errors(formulario) }}
+                {{ form_row(formulario.name, { 'label' : 'contacto.formularionombre' | trans }) }}
+                {{ form_row(formulario.email, { 'label' : 'contacto.formularioemail' | trans }) }}
+                {{ form_row(formulario.message, { 'label' : 'contacto.formulariomessage' | trans }) }}
+                {{ form_rest(formulario) }}
+                <input class="boton" type="submit" value="{% trans %}contacto.enviar{% endtrans %}" />
+            </form>
+        </div>
+    </div>
+{% endblock %}
+{% block peuidiomes %}
+    {% if app.request.locale != 'ca' %}<a href="{{ path('contacte_ca', {'_locale' : 'ca'}) }}">català</a> ·{% endif %}
+    {% if app.request.locale != 'es' %}<a href="{{ path('contacte_es', {'_locale' : 'es'}) }}">español</a> {% if app.request.locale != 'en' %}·{% endif %}{% endif %}
+    {% if app.request.locale != 'en' %}<a href="{{ path('contacte_en', {'_locale' : 'en'}) }}">english</a>{% endif %}<br/>
+{% endblock %}
