@@ -7,7 +7,7 @@
     {% for url in urls %}
         <url>
             <loc>
-                http://{{hostname}}{{url.loc}}
+                https://{{hostname}}{{url.loc}}
             </loc>
             {% if url.lastmod is defined %}
                 <lastmod>
