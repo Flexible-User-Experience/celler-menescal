@@ -65,26 +65,26 @@ class ActivityCategoryAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('General')
+            ->with('General', array('class' => 'col-md-6', 'box_class' => 'box box-success'))
             ->add('code', 'text', array('label' => $this->trans('page.code')))
             ->add('title', 'text', array('label' => $this->trans('page.title')))
             ->add('summary', 'text', array('label' => $this->trans('page.summary'), 'required' => false))
             ->end()
-            ->with('SEO') // SEO
+            ->with('SEO', array('class' => 'col-md-6', 'box_class' => 'box box-success')) // SEO
             ->add('metaTitle', 'text', array('label' => $this->trans('page.metatitle'), 'required' => false))
             ->add('metaDescription', 'text', array('label' => $this->trans('page.metadescription'), 'required' => false))
             ->end()
-            ->with('Imatges') // IMAGES
+            ->with('Imatges', array('class' => 'col-md-6', 'box_class' => 'box box-success')) // IMAGES
             ->add('image1File', 'file', array('label' => $this->trans('page.upload.image1'), 'required' => false))
             ->add('image1', null, array('label' => $this->trans('page.image1'), 'required' => false, 'read_only' => true))
             ->add('altImage1', 'text', array('label' => $this->trans('page.altimage1'), 'required' => false))
             ->add('titleImage1', 'text', array('label' => $this->trans('page.titleimage1'), 'required' => false))
             ->end()
-            ->with('Controls') // CONTROLS
+            ->with('Controls', array('class' => 'col-md-6', 'box_class' => 'box box-success')) // CONTROLS
             ->add('position', 'integer', array('label' => $this->trans('page.position')))
             ->add('is_active', 'checkbox', array('label' => $this->trans('page.active'), 'required' => false))
             ->end()
-            ->with('Traduccions') // TRANSLATIONS
+            ->with('Traduccions', array('class' => 'col-md-6', 'box_class' => 'box box-success')) // TRANSLATIONS
             ->add('translations', 'a2lix_translations_gedmo', array(
                 'label' => ' ',
                 'required' => false,

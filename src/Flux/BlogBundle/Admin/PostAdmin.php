@@ -35,7 +35,6 @@ class PostAdmin extends AbstractAdmin
                 'actions',
                 array(
                     'actions' => array(
-                        //'view' => array(),
                         'edit' => array(),
                     ),
                     'label' => $this->trans('blog.actions'),
@@ -59,7 +58,7 @@ class PostAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('General')
+            ->with('General', array('class' => 'col-md-6', 'box_class' => 'box box-success'))
             ->add('postDate', null, array('label' => $this->trans('blog.date')))
             ->add('title', 'text', array('label' => $this->trans('blog.title')))
             ->add('subtitle', 'text', array('label' => $this->trans('blog.subtitle'), 'required' => false))
