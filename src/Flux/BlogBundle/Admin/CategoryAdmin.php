@@ -31,7 +31,6 @@ class CategoryAdmin extends AbstractAdmin
                 'actions',
                 array(
                     'actions' => array(
-                        //'view' => array(),
                         'edit' => array(),
                     ),
                     'label' => $this->trans('blog.actions'),
@@ -45,7 +44,7 @@ class CategoryAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('General')
+            ->with('General', array('class' => 'col-md-6', 'box_class' => 'box box-success'))
             ->add('title', 'text', array('label' => $this->trans('blog.title')))
             ->add(
                 'translations',

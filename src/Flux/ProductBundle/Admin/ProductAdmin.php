@@ -97,7 +97,7 @@ class ProductAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('General')
+            ->with('General', array('class' => 'col-md-6', 'box_class' => 'box box-success'))
             ->add('category', 'sonata_type_model', array('label' => $this->trans('page.category')), array())
             ->add('code', 'text', array('label' => $this->trans('page.code')))
             ->add('name', 'text', array('label' => $this->trans('page.name')))
@@ -107,7 +107,7 @@ class ProductAdmin extends AbstractAdmin
             ->add('mix', 'text', array('label' => 'Varietats', 'required' => false))
             ->add('presentation', 'text', array('label' => 'Presentació', 'required' => false))
             ->end()
-            ->with('Descripcions')// DESCRIPTIONS
+            ->with('Descripcions', array('class' => 'col-md-6', 'box_class' => 'box box-success')) // DESCRIPTIONS
             ->add(
                 'vinification',
                 'ckeditor',
@@ -142,7 +142,7 @@ class ProductAdmin extends AbstractAdmin
                 )
             )
             ->end()
-            ->with('SEO')// SEO
+            ->with('SEO', array('class' => 'col-md-6', 'box_class' => 'box box-success')) // SEO
             ->add('metaTitle', 'text', array('label' => $this->trans('page.metatitle'), 'required' => false))
             ->add(
                 'metaDescription',
@@ -150,7 +150,7 @@ class ProductAdmin extends AbstractAdmin
                 array('label' => $this->trans('page.metadescription'), 'required' => false)
             )
             ->end()
-            ->with('Imatges')// IMAGES
+            ->with('Imatges', array('class' => 'col-md-6', 'box_class' => 'box box-success')) // IMAGES
             ->add('image1File', 'file', array('label' => $this->trans('page.upload.image1'), 'required' => false))
             ->add(
                 'image1',
@@ -160,11 +160,11 @@ class ProductAdmin extends AbstractAdmin
             ->add('altImage1', 'text', array('label' => $this->trans('page.altimage1'), 'required' => false))
             ->add('titleImage1', 'text', array('label' => $this->trans('page.titleimage1'), 'required' => false))
             ->end()
-            ->with('Controls')// CONTROLS
+            ->with('Controls', array('class' => 'col-md-6', 'box_class' => 'box box-success')) // CONTROLS
             ->add('position', 'integer', array('label' => $this->trans('page.position')))
             ->add('is_active', 'checkbox', array('label' => $this->trans('page.active'), 'required' => false))
             ->end()
-            ->with('Traduccions')// TRANSLATIONS
+            ->with('Traduccions', array('class' => 'col-md-6', 'box_class' => 'box box-success')) // TRANSLATIONS
             ->add(
                 'translations',
                 'a2lix_translations_gedmo',
