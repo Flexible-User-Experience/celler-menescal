@@ -1,12 +1,15 @@
-{% extends 'MainBundle:Global:layout.html.twig' %}
+{% extends "MainBundle:Global:layout.html.twig" %}
+
 {% block titulo %}
     {% trans %}titulo.contacto{% endtrans %} |
 {% endblock %}
+
 {% block description %}
     {% trans %}description.contacto{% endtrans %}
 {% endblock %}
-{% block recursos %}
-{% endblock recursos %}
+
+{% block recursos %}{% endblock recursos %}
+
 {% block principal %}
     <div class="constrictor clearfix" xmlns="http://www.w3.org/1999/html">
         <div class="panel-contacto-google-maps">
@@ -29,17 +32,19 @@
             <h3>{% trans %}contacto.formulariodecontacto{% endtrans %}</h3>
             <form action="{{ path('contacte_' ~ app.request.locale ) }}" method="post" {{ form_enctype(formulario) }}>
                 {{ form_errors(formulario) }}
-                {{ form_row(formulario.name, { 'label' : 'contacto.formularionombre' | trans }) }}
-                {{ form_row(formulario.email, { 'label' : 'contacto.formularioemail' | trans }) }}
-                {{ form_row(formulario.message, { 'label' : 'contacto.formulariomessage' | trans }) }}
+                {{ form_row(formulario.name, {label: 'contacto.formularionombre' | trans }) }}
+                {{ form_row(formulario.email, {label: 'contacto.formularioemail' | trans }) }}
+                {{ form_row(formulario.message, {label: 'contacto.formulariomessage' | trans }) }}
+                {{ form_row(formulario.captcha) }}
                 {{ form_rest(formulario) }}
                 <input class="boton" type="submit" value="{% trans %}contacto.enviar{% endtrans %}" />
             </form>
         </div>
     </div>
 {% endblock %}
+
 {% block peuidiomes %}
-    {% if app.request.locale != 'ca' %}<a href="{{ path('contacte_ca', {'_locale' : 'ca'}) }}">català</a> ·{% endif %}
-    {% if app.request.locale != 'es' %}<a href="{{ path('contacte_es', {'_locale' : 'es'}) }}">español</a> {% if app.request.locale != 'en' %}·{% endif %}{% endif %}
-    {% if app.request.locale != 'en' %}<a href="{{ path('contacte_en', {'_locale' : 'en'}) }}">english</a>{% endif %}<br/>
+    {% if app.request.locale != 'ca' %}<a href="{{ path('contacte_ca', {_locale: 'ca'}) }}">català</a> ·{% endif %}
+    {% if app.request.locale != 'es' %}<a href="{{ path('contacte_es', {_locale: 'es'}) }}">español</a> {% if app.request.locale != 'en' %}·{% endif %}{% endif %}
+    {% if app.request.locale != 'en' %}<a href="{{ path('contacte_en', {_locale: 'en'}) }}">english</a>{% endif %}<br/>
 {% endblock %}
