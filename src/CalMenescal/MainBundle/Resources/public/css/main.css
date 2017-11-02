@@ -1,14 +1,3 @@
-/*
- * HTML5 Boilerplate
- *
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
 html, button, input, select, textarea {
     color: #222;
 }
@@ -19,20 +8,6 @@ body {
     font-family: 'Marvel', sans-serif;
 }
 
-/*@font-face {
-    font-family: 'GothamRnd';
-    src: url('/fonts/otf/gothamrndmedium.otf');
-    src: url('/fonts/ttf/gothamrndmedium.ttf') format('truetype'),
-         url('/fonts/svg/gothamrndmedium.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}*/
-
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection declarations have to be separate.
- * Customize the background color to match your design.
- */
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
@@ -43,9 +18,6 @@ body {
     text-shadow: none;
 }
 
-/*
- * A better looking default horizontal rule
- */
 hr {
     display: block;
     height: 1px;
@@ -55,32 +27,20 @@ hr {
     padding: 0;
 }
 
-/*
- * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
- */
 img {
     vertical-align: middle;
 }
 
-/*
- * Remove default fieldset styles.
- */
 fieldset {
     border: 0;
     margin: 0;
     padding: 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
 textarea {
     resize: vertical;
 }
 
-/* ==========================================================================
-   Chrome Frame prompt
-   ========================================================================== */
 .chromeframe {
     margin: 0.2em 0;
     background: #ccc;
@@ -88,18 +48,6 @@ textarea {
     padding: 0.2em 0;
 }
 
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
 div.constrictor {
     width: 940px;
     padding: 0 10px;
@@ -169,7 +117,6 @@ header div.constrictor.clearfix ul li.current a:hover,
  header div.constrictor.clearfix ul li.current_ancestor a:hover {
     color: #FFF;
 }
-
 
 
 /**
@@ -596,6 +543,10 @@ div#principal div.constrictor.clearfix div.panel-contacto-der form div textarea 
     height: 80px;
 }
 
+div#principal div.constrictor.clearfix div.panel-contacto-der form div.form-group div.g-recaptcha {
+    margin-left: 80px;
+}
+
 div#principal div.constrictor.clearfix div.panel-contacto-der form input[type="submit"].boton {
     padding: 5px 20px;
     border-radius: 4px;
@@ -608,7 +559,7 @@ div#principal div.constrictor.clearfix div.panel-contacto-der form input[type="s
     text-align: center;
     background-color: #6C1D45;
     text-transform: uppercase;
-    font-family: "Marvel";
+    font-family: "Marvel", sans-serif;
     font-size: 16px;
     float: right;
     border: none;
@@ -694,7 +645,6 @@ footer div.constrictor.clearfix div p {
 }
 
 
-
 /*
  * Actions
  */
@@ -735,20 +685,9 @@ a.call-to-action.black {
 }
 
 
-
-
-
-
-
-
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-
-/*
- * Image replacement
- */
-
 .ir {
     background-color: transparent;
     border: 0;
@@ -764,18 +703,10 @@ a.call-to-action.black {
     height: 100%;
 }
 
-/*
- * Hide from both screenreaders and browsers: h5bp.com/u
- */
-
 .hidden {
     display: none !important;
     visibility: hidden;
 }
-
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
 
 .visuallyhidden {
     border: 0;
@@ -788,11 +719,6 @@ a.call-to-action.black {
     width: 1px;
 }
 
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
-
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
     clip: auto;
@@ -803,25 +729,9 @@ a.call-to-action.black {
     width: auto;
 }
 
-/*
- * Hide visually and from screenreaders, but maintain layout
- */
-
 .invisible {
     visibility: hidden;
 }
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
 
 .clearfix:before,
 .clearfix:after {
@@ -833,20 +743,9 @@ a.call-to-action.black {
     clear: both;
 }
 
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-
 .clearfix {
     *zoom: 1;
 }
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   Theses examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
@@ -856,11 +755,6 @@ a.call-to-action.black {
        only screen and (min-resolution: 144dpi) {
     /* Style adjustments for high resolution devices */
 }
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
 
 @media print {
     * {
@@ -883,10 +777,6 @@ a.call-to-action.black {
         content: " (" attr(title) ")";
     }
 
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
-
     .ir a:after,
     a[href^="javascript:"]:after,
     a[href^="#"]:after {
@@ -900,7 +790,7 @@ a.call-to-action.black {
     }
 
     thead {
-        display: table-header-group; /* h5bp.com/t */
+        display: table-header-group;
     }
 
     tr,
